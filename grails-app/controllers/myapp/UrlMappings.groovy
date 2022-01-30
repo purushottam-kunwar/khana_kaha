@@ -12,6 +12,7 @@ class UrlMappings {
             }
         }
 
+        "/"(controller: 'application', action: 'dashboard')
         "500"(view: '/error')
         "404"(view: '/notFound')
     }
