@@ -6,6 +6,7 @@ import org.grails.web.json.JSONObject
 
 @Transactional
 class UserService {
+    def emailService
 
     def create(params) {
         JSONObject response = new JSONObject()
@@ -22,6 +23,8 @@ class UserService {
                 newUser.save(flush: true, failOnError: true)
                 response.put('result', newUser)
                 response.put('message', 'User Created Successfully.')
+
+                emailService.send(fullName: newUser.fullName, email: newUser.email)
 
                 return response
             } catch (ValidationException e) {
