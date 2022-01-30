@@ -11,9 +11,7 @@ class ApplicationController implements PluginManagerAware {
     GrailsPluginManager pluginManager
 
     static responseFormats = ['json', 'xml']
-    static allowedMethods = [dashboard: "GET",
-
-    ]
+    static allowedMethods = [dashboard: "GET"]
 
     def index() {
         [grailsApplication: grailsApplication, pluginManager: pluginManager]
