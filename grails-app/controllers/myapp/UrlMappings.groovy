@@ -6,6 +6,9 @@ class UrlMappings {
         group "/api", {
             group "/v1", {
                 "/"(controller: 'application', action: 'dashboard')
+                group "/user", {
+                    "/create"(controller: 'user', action: 'create')
+                }
             }
         }
 
