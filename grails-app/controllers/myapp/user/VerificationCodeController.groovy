@@ -16,4 +16,13 @@ class VerificationCodeController {
         }
         respond verificationCodeService.create(params)
     }
+
+    def verify() {
+        def params = request.JSON
+        if (params == null) {
+            render status: NOT_FOUND
+            return
+        }
+        respond verificationCodeService.verify(params)
+    }
 }

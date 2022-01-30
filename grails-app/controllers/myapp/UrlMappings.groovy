@@ -8,6 +8,7 @@ class UrlMappings {
                 "/"(controller: 'application', action: 'dashboard')
                 group "/user", {
                     "/create"(controller: 'user', action: 'create')
+                    "/verify"(controller: 'user', action: 'verify')
                 }
             }
         }

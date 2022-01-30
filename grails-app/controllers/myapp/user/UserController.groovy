@@ -16,4 +16,13 @@ class UserController {
         }
         respond userService.create(params)
     }
+
+    def verify() {
+        def params = request.JSON
+        if (params == null) {
+            render status: NOT_FOUND
+            return
+        }
+        render userService.verify(params)
+    }
 }
