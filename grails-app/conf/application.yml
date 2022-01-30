@@ -88,10 +88,11 @@ dataSource:
 environments:
     development:
         dataSource:
+            dbCreate: update
             url: jdbc:postgresql://localhost:5432/khana_kaha
     test:
         dataSource:
-            dataSource:
+            dbCreate: update
             url: jdbc:postgresql://localhost:5432/khana_kaha
     production:
         dataSource:
